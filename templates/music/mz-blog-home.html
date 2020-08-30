@@ -1,0 +1,14 @@
+{% extends 'blog/blogbase.html' %}
+
+{% block content %}
+	{% for post in mzpostlist %}
+		<article class="article-main">
+			<h3> {{ post.mz_title }} </h3>
+			<hr style="background-color: #cbcfd6">
+			<div class="article-author-name">By {{ post.mz_author }}</div> 
+			<p class="article-text"> {{ post.mz_text|linebreaks }}</p>
+			<div class="article-date-edited">{{ post.mz_created_date }}</div>
+			<p class="article-date-edited"> Date published: {{ post.mz_published_date }} </p>
+		</article>
+	{% endfor %}
+{% endblock %}
